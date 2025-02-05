@@ -16,5 +16,4 @@ public abstract class EnemyState : IState<Enemy>
     {
 
     }
-
 }

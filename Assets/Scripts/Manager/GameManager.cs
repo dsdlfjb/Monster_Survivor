@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    #region ?±ê???
+    #region ½Ì±ÛÅæ
     static GameManager _instance;
     public static GameManager Instance
     {
@@ -19,12 +19,10 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    [Header("[ ê²Œì„ ì»¨íŠ¸ë¡?]")]
     public float _gameTime;
     public float _maxGameTime = 300f;
     public bool _isLive;
 
-    [Header("[ ?Œë ˆ?´ì–´ ?•ë³´ ]")]
     public int _level;
     public int _killCount;
     public float _curHp;
@@ -32,7 +30,6 @@ public class GameManager : MonoBehaviour
     public int _exp;
     public int[] _nextExp = {  };
 
-    [Header("[ ê²Œì„ ?¤ë¸Œ?íŠ¸ ]")]
     public PlayerCtrl _player;
     public PoolManager _pool;
     public LevelUp _uiLevelUp;
@@ -44,11 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // JSON ?Œì¼ë¡œë????°ì´??ë¡œë“œ
-        string jsonData = "";   // JSON ?Œì¼?ì„œ ?°ì´?°ë? ?½ì–´?€??jsonData???€??
-        // jsonDataë¥??Œì‹±?˜ì—¬ InventoryManager?€ ShopManager??weaponList??? ë‹¹
-        //_inventoryManager._skinList = JsonUtility.FromJson<SkinList>(jsonData);
-        //_shopManager._skinList = _inventoryManager._skinList;
+        string jsonData = "";  
     }
 
     private void Start()
@@ -68,7 +61,6 @@ public class GameManager : MonoBehaviour
         _gameTime += Time.deltaTime;
     }
 
-    // ê²½í—˜ì¹?ì¦ê? ?¨ìˆ˜
     public void GetExp()
     {
         if (!_isLive) return;
